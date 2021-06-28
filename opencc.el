@@ -157,6 +157,7 @@ THEN-FORM and ELSE-FORMS are then excuted just like in `if'."
       (delete-region (point-min) (point-max))
       (process-send-string proc (concat string "\n"))
       (accept-process-output proc)
+      (sleep-for 0.1)
       (setq result (buffer-substring (point-min) (1- (point-max)))))
     result))
 
